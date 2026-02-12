@@ -1,31 +1,16 @@
 'use client';
 import Image from 'next/image';
-import { BorderTrail } from '@/components/ui/border-trail';
-import { useEffect, useState } from 'react';
-import { Switch } from '@/components/ui/switch';
-import { Label } from '@/components/ui/label';
-import { TextMorph } from '@/components/ui/text-morph';
-import { TextEffect } from '@/components/ui/text-effect';
-
+import { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 
 const WORKMODE = {
-    "header": [
-        "Backend Specialist",
-        "Server-Side Expert",
-    ],
-    "subheader": [
-        "Building robust, scalable backend systems with expertise in API development, database architecture, and system optimization. Passionate about performance, security, and solving complex server-side challenges."
-    ]
+    "header": "Backend Specialist",
+    "subheader": "Building robust, scalable backend systems with expertise in API development, database architecture, and system optimization. Passionate about performance, security, and solving complex server-side challenges."
 }
 
 const CHILLGUY = {
-    "header": [
-        "Backend Engineer",
-        "API & Database Specialist"
-    ],
-    "subheader": [
-        "I specialize in backend development, creating high-performance APIs and database solutions. I build scalable server architectures and optimize system performance. Clean code is important, but results matter more!"
-    ]
+    "header": "Backend Engineer",
+    "subheader": "I specialize in backend development, creating high-performance APIs and database solutions. I build scalable server architectures and optimize system performance. Clean code is important, but results matter more!"
 }
 
 export default function Hero() {
@@ -41,42 +26,116 @@ export default function Hero() {
     }, [mode]);
 
     return (
-        <section id="hero" className="flex flex-row h-screen">
-            <div className="flex-1/2 flex flex-col items-start justify-center ml-16">
-                <h1 className="text-4xl text-start md:text-5xl font-bold mb-4 flex flex-col">
-                    <TextMorph>{currentModeLanguage["header"][0]}</TextMorph> &
-                    <TextMorph className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                        {currentModeLanguage["header"][1]}
-                    </TextMorph>
-                </h1>
-                <TextEffect per='word' as='h3' preset='blur' speedSegment={1.5} speedReveal={1.5} className="text-gray-300 text-lg mb-8">
-                    {currentModeLanguage["subheader"][0]}
-                </TextEffect>
-                <div className="flex items-center space-x-2">
-                    <Switch id="airplane-mode" checked={mode} onCheckedChange={(vars) => setMode(vars)} />
-                    <Label htmlFor="genz-mode">
-                        <TextMorph className="text-gray-300 text-lg">
+        <section id="hero" className="min-h-screen relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+                
+                <div className="lg:col-span-7 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 lg:py-0">
+                    
+                    <motion.div 
+                        className="mb-8"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <span className="text-xs tracking-[0.3em] uppercase border-b border-foreground/30 pb-1 inline-block mb-6">
+                            Backend Development &bull; System Architecture
+                        </span>
+                    </motion.div>
+
+                    <motion.h1 
+                        className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[0.95] tracking-tight mb-8"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        {currentModeLanguage["header"].split(' ').map((word, index) => (
+                            <motion.span
+                                key={index}
+                                className="inline-block mr-3 last:mr-0"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                            >
+                                {word}
+                            </motion.span>
+                        ))}
+                    </motion.h1>
+
+                    <motion.p 
+                        className="text-base md:text-lg leading-relaxed max-w-2xl text-foreground/70 mb-12 font-light"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                        {currentModeLanguage["subheader"]}
+                    </motion.p>
+
+                    <motion.div 
+                        className="flex items-center gap-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                    >
+                        <button
+                            onClick={() => setMode(!mode)}
+                            className="group relative px-8 py-3 border border-foreground/20 hover:border-foreground/60 transition-colors"
+                        >
+                            <span className="text-xs tracking-[0.2em] uppercase group-hover:tracking-[0.25em] transition-all">
+                                {mode ? 'Switch to Casual' : 'Switch to Formal'}
+                            </span>
+                        </button>
+                        <span className="text-xs text-foreground/40 tracking-[0.15em] uppercase">
                             {mode ? 'Work Mode' : 'Chill Mode'}
-                        </TextMorph>
-                    </Label>
+                        </span>
+                    </motion.div>
+                </div>
+
+                <div className="lg:col-span-5 relative">
+                    <div className="absolute inset-0 bg-foreground/5" />
+                    
+                    <div className="relative h-full flex items-center justify-center p-8 lg:p-12">
+                        <motion.div 
+                            className="relative"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                        >
+                            <div className="absolute -inset-4 border border-foreground/10" />
+                            <div className="absolute -inset-8 border border-foreground/5" />
+                            
+                            <Image
+                                className="w-full max-w-md object-cover"
+                                src="/images/hero.jpg"
+                                alt="hero"
+                                width={500}
+                                height={600}
+                            />
+                            
+                            <motion.div 
+                                className="absolute -bottom-6 -left-6 bg-background border border-foreground/20 px-6 py-4"
+                                initial={{ opacity: 0, x: 20, y: 20 }}
+                                animate={{ opacity: 1, x: 0, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1 }}
+                            >
+                                <p className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-1">Based in</p>
+                                <p className="text-sm font-medium">Binh Phuoc, Viet Nam</p>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                    <motion.div 
+                        className="absolute bottom-8 right-8 text-right"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1.2 }}
+                    >
+                        <p className="text-[10px] tracking-[0.3em] uppercase text-foreground/40 mb-2">Experience</p>
+                        <p className="text-2xl font-medium">8+ Years</p>
+                    </motion.div>
                 </div>
             </div>
-            <div className="flex-1/2 flex justify-center items-center">
-                <div className="flex flex-col items-center justify-center relative p-4 rounded-full overflow-ellipsis">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-20 animate-pulse"></div>
-                    <Image
-                        className="rounded-full object-cover border-4 border-gray-800 relative z-10"
-                        src="/images/hero.jpg"
-                        alt="hero"
-                        width={500}
-                        height={500}
-                    />
-                    <BorderTrail
-                        className="bg-linear-to-l from-blue-200 via-blue-500 to-blue-200 dark:from-blue-400 dark:via-blue-500 dark:to-blue-700"
-                        size={100}
-                    />
-                </div>
-            </div>
+
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-foreground/10" />
         </section>
     );
 }
