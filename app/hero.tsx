@@ -37,7 +37,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-xs tracking-[0.3em] uppercase border-b border-foreground/30 pb-1 inline-block mb-6">
+                        <span className="text-xs tracking-[0.3em] uppercase border-b border-accent pb-1 inline-block mb-6 text-accent">
                             Backend Development &bull; System Architecture
                         </span>
                     </motion.div>
@@ -78,13 +78,13 @@ export default function Hero() {
                     >
                         <button
                             onClick={() => setMode(!mode)}
-                            className="group relative px-8 py-3 border border-foreground/20 hover:border-foreground/60 transition-colors"
+                            className="group relative px-8 py-3 border-2 border-accent hover:bg-accent/10 transition-all"
                         >
                             <span className="text-xs tracking-[0.2em] uppercase group-hover:tracking-[0.25em] transition-all">
                                 {mode ? 'Switch to Casual' : 'Switch to Formal'}
                             </span>
                         </button>
-                        <span className="text-xs text-foreground/40 tracking-[0.15em] uppercase">
+                        <span className="text-xs text-foreground/40 tracking-[0.15em] uppercase text-accent/60">
                             {mode ? 'Work Mode' : 'Chill Mode'}
                         </span>
                     </motion.div>
@@ -100,8 +100,8 @@ export default function Hero() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.4 }}
                         >
-                            <div className="absolute -inset-4 border border-foreground/10" />
-                            <div className="absolute -inset-8 border border-foreground/5" />
+                            <div className="absolute -inset-4 border border-accent/40" />
+                            <div className="absolute -inset-8 border border-accent/20" />
                             
                             <Image
                                 className="w-full max-w-md object-cover"
@@ -112,12 +112,12 @@ export default function Hero() {
                             />
                             
                             <motion.div 
-                                className="absolute -bottom-6 -left-6 bg-background border border-foreground/20 px-6 py-4"
+                                className="absolute -bottom-6 -left-6 bg-background border-2 border-accent px-6 py-4"
                                 initial={{ opacity: 0, x: 20, y: 20 }}
                                 animate={{ opacity: 1, x: 0, y: 0 }}
                                 transition={{ duration: 0.8, delay: 1 }}
                             >
-                                <p className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-1">Based in</p>
+                                <p className="text-xs tracking-[0.2em] uppercase text-accent/80 mb-1">Based in</p>
                                 <p className="text-sm font-medium">Binh Phuoc, Viet Nam</p>
                             </motion.div>
                         </motion.div>
@@ -129,13 +129,13 @@ export default function Hero() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.2 }}
                     >
-                        <p className="text-[10px] tracking-[0.3em] uppercase text-foreground/40 mb-2">Experience</p>
-                        <p className="text-2xl font-medium">8+ Years</p>
+                        <p className="text-[10px] tracking-[0.3em] uppercase text-foreground/40 mb-2 text-accent/60">Experience</p>
+                        <p className="text-2xl font-medium text-accent">8+ Years</p>
                     </motion.div>
                 </div>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-foreground/10" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-accent/20" />
         </section>
     );
 }

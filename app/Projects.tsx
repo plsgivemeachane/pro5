@@ -58,13 +58,13 @@ export default function Projects() {
     const categories: (ProjectCategory | 'All')[] = ['All', 'API Development', 'Database Architecture', 'Microservices', 'System Optimization'];
 
     return (
-        <section id="projects" className="py-24 lg:py-32 bg-foreground/[0.02] border-t border-foreground/10">
+        <section id="projects" className="py-24 lg:py-32 bg-foreground/[0.02] border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-8">
                     <div>
                         <motion.span 
-                            className="text-xs tracking-[0.3em] uppercase text-foreground/40 inline-block mb-4"
+                            className="text-xs tracking-[0.3em] uppercase text-accent inline-block mb-4"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
@@ -94,10 +94,10 @@ export default function Projects() {
                             <button
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
-                                className={`px-5 py-2 text-sm transition-colors ${
+                                className={`px-5 py-2 text-sm transition-colors border ${
                                     activeCategory === category
-                                        ? 'bg-foreground text-background'
-                                        : 'border border-foreground/20 hover:border-foreground/40'
+                                        ? 'bg-accent text-background border-accent'
+                                        : 'border-accent/30 hover:border-accent'
                                 }`}
                             >
                                 {category}
@@ -107,7 +107,7 @@ export default function Projects() {
                 </div>
 
                 <motion.div 
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-accent/20 border-2 border-accent"
                     layout
                 >
                     <AnimatePresence mode="wait">
@@ -123,7 +123,7 @@ export default function Projects() {
                                 layout
                             >
                                 <div className="mb-6">
-                                    <span className="text-xs tracking-[0.2em] uppercase text-foreground/40">
+                                    <span className="text-xs tracking-[0.2em] uppercase text-accent">
                                         {project.category}
                                     </span>
                                 </div>
@@ -140,16 +140,16 @@ export default function Projects() {
                                     {project.technologies.map((tech, techIndex) => (
                                         <span
                                             key={techIndex}
-                                            className="text-xs px-3 py-1 border border-foreground/20 text-foreground/70"
+                                            className="text-xs px-3 py-1 border border-accent/30 text-foreground/70"
                                         >
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="pt-6 border-t border-foreground/10">
+                                <div className="pt-6 border-t border-accent/20">
                                     <div className="flex items-start gap-3">
-                                        <span className="text-foreground/60 mt-0.5">→</span>
+                                        <span className="text-accent mt-0.5">→</span>
                                         <p className="text-sm text-foreground/60">
                                             <span className="text-foreground font-medium">Impact:</span> {project.impact}
                                         </p>

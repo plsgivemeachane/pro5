@@ -21,12 +21,12 @@ export default function TechnicalExertise() {
     ];
 
     return (
-        <section id="technical-expertise" className="py-24 lg:py-32 border-t border-foreground/10">
+        <section id="technical-expertise" className="py-24 lg:py-32 border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="mb-20 lg:mb-24">
                     <motion.span 
-                        className="text-xs tracking-[0.3em] uppercase text-foreground/40 inline-block mb-4"
+                        className="text-xs tracking-[0.3em] uppercase text-accent inline-block mb-4"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -45,7 +45,7 @@ export default function TechnicalExertise() {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-accent/20 border-2 border-accent">
                     {expertise.map((item, index) => (
                         <motion.div
                             key={index}
@@ -56,7 +56,7 @@ export default function TechnicalExertise() {
                             transition={{ duration: 0.8, delay: index * 0.15 }}
                         >
                             <div className="mb-6">
-                                <span className="text-xs tracking-[0.2em] uppercase text-foreground/40">
+                                <span className="text-xs tracking-[0.2em] uppercase text-accent/60">
                                     0{index + 1}
                                 </span>
                             </div>
@@ -73,7 +73,7 @@ export default function TechnicalExertise() {
                                 {item.technologies.map((tech, techIndex) => (
                                     <span
                                         key={techIndex}
-                                        className="text-xs px-3 py-1 border border-foreground/20 text-foreground/70"
+                                        className="text-xs px-3 py-1 border border-accent/30 text-foreground/70"
                                     >
                                         {tech}
                                     </span>

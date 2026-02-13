@@ -67,12 +67,12 @@ export default function Experience() {
     ];
 
     return (
-        <section id="experience" className="py-24 lg:py-32 border-t border-foreground/10">
+        <section id="experience" className="py-24 lg:py-32 border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="mb-20 lg:mb-24">
                     <motion.span 
-                        className="text-xs tracking-[0.3em] uppercase text-foreground/40 inline-block mb-4"
+                        className="text-xs tracking-[0.3em] uppercase text-accent inline-block mb-4"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
@@ -92,7 +92,7 @@ export default function Experience() {
                 </div>
 
                 <div className="relative">
-                    <div className="absolute left-[7px] top-0 bottom-0 w-px bg-foreground/20" />
+                    <div className="absolute left-[7px] top-0 bottom-0 w-px bg-accent/40" />
                     
                     <div className="space-y-12">
                         {experience.map((job, index) => (
@@ -104,9 +104,9 @@ export default function Experience() {
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: index * 0.15 }}
                             >
-                                <div className="absolute left-0 top-0 w-4 h-4 border-2 border-foreground bg-background" />
+                                <div className="absolute left-0 top-0 w-4 h-4 border-2 border-accent bg-background" />
                                 
-                                <div className="bg-foreground/[0.02] border border-foreground/10 p-8 lg:p-12">
+                                <div className="bg-foreground/[0.02] border-2 border-accent/30 p-8 lg:p-12 hover:border-accent transition-colors">
                                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-8">
                                         <div>
                                             <h3 className="text-xl lg:text-2xl font-medium mb-2 tracking-tight">
@@ -116,7 +116,7 @@ export default function Experience() {
                                                 {job.company}
                                             </p>
                                         </div>
-                                        <span className="text-xs tracking-[0.2em] uppercase text-foreground/40 whitespace-nowrap">
+                                        <span className="text-xs tracking-[0.2em] uppercase text-accent whitespace-nowrap">
                                             {job.period}
                                         </span>
                                     </div>
@@ -125,7 +125,7 @@ export default function Experience() {
                                         {job.technologies.map((tech, techIndex) => (
                                             <span
                                                 key={techIndex}
-                                                className="text-xs px-3 py-1 border border-foreground/20 text-foreground/70"
+                                                className="text-xs px-3 py-1 border border-accent/30 text-foreground/70"
                                             >
                                                 {tech}
                                             </span>
@@ -135,7 +135,7 @@ export default function Experience() {
                                     <ul className="space-y-3 mb-6">
                                         {job.responsibilities.map((item, itemIndex) => (
                                             <li key={itemIndex} className="flex items-start gap-3 text-sm text-foreground/70">
-                                                <span className="text-foreground/40 mt-0.5">—</span>
+                                                <span className="text-accent/60 mt-0.5">—</span>
                                                 <span>{item}</span>
                                             </li>
                                         ))}
@@ -145,7 +145,7 @@ export default function Experience() {
                                         <div>
                                             <motion.button
                                                 onClick={() => toggleExpand(index)}
-                                                className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-foreground transition-colors flex items-center gap-2"
+                                                className="text-xs tracking-[0.2em] uppercase text-accent hover:text-accent/80 transition-colors flex items-center gap-2"
                                             >
                                                 <motion.span
                                                     animate={{ rotate: expandedIndex === index ? 180 : 0 }}
@@ -159,7 +159,7 @@ export default function Experience() {
                                             <AnimatePresence>
                                                 {expandedIndex === index && (
                                                     <motion.div
-                                                        className="mt-6 pt-6 border-t border-foreground/10"
+                                                        className="mt-6 pt-6 border-t border-accent/20"
                                                         initial={{ opacity: 0, height: 0 }}
                                                         animate={{ opacity: 1, height: 'auto' }}
                                                         exit={{ opacity: 0, height: 0 }}
@@ -168,7 +168,7 @@ export default function Experience() {
                                                         <ul className="space-y-2 text-sm text-foreground/60">
                                                             {job.technicalDetails.map((detail, detailIndex) => (
                                                                 <li key={detailIndex} className="flex items-start gap-3">
-                                                                    <span className="text-foreground/40 mt-0.5">—</span>
+                                                                    <span className="text-accent/60 mt-0.5">—</span>
                                                                     <span>{detail}</span>
                                                                 </li>
                                                             ))}

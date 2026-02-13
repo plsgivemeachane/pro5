@@ -7,7 +7,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="border-t border-foreground/10">
+        <footer className="border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="py-16 lg:py-20">
@@ -27,7 +27,7 @@ export default function Footer() {
                             </p>
                             <motion.button
                                 onClick={scrollToTop}
-                                className="text-xs tracking-[0.2em] uppercase text-foreground/60 hover:text-foreground transition-colors flex items-center gap-2"
+                                className="text-xs tracking-[0.2em] uppercase text-accent hover:text-accent/80 transition-colors flex items-center gap-2"
                                 whileHover={{ x: 5 }}
                             >
                                 Back to top
@@ -43,11 +43,11 @@ export default function Footer() {
                         >
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                 <div>
-                                    <p className="text-xs tracking-[0.2em] uppercase text-foreground/40 mb-4">Contact</p>
+                                    <p className="text-xs tracking-[0.2em] uppercase text-accent mb-4">Contact</p>
                                     <div className="space-y-3">
                                         <a 
                                             href="mailto:rakis9076@gmail.com"
-                                            className="block text-sm text-foreground/70 hover:text-foreground transition-colors"
+                                            className="block text-sm text-foreground/70 hover:text-accent transition-colors"
                                         >
                                             rakis9076@gmail.com
                                         </a>
@@ -58,13 +58,13 @@ export default function Footer() {
                                 </div>
 
                                 <div>
-                                    <p className="text-xs tracking-[0.2em] uppercase text-foreground/40 mb-4">Social</p>
+                                    <p className="text-xs tracking-[0.2em] uppercase text-accent mb-4">Social</p>
                                     <div className="space-y-3">
                                         <a 
                                             href="https://github.com/plsgivemeachane"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="block text-sm text-foreground/70 hover:text-foreground transition-colors"
+                                            className="block text-sm text-foreground/70 hover:text-accent transition-colors"
                                         >
                                             GitHub
                                         </a>
@@ -76,11 +76,11 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="py-8 border-t border-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="py-8 border-t border-accent/20 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-foreground/40">
                         © {new Date().getFullYear()} QUANVNDZAI. All rights reserved.
                     </p>
-                    <p className="text-xs text-foreground/40">
+                    <p className="text-xs text-accent">
                         Designed & Built with precision
                     </p>
                 </div>

@@ -35,7 +35,7 @@ export default function NavBar() {
     }, []);
 
     return (
-        <nav className="sticky top-0 z-50 border-b border-foreground/10 bg-background/80 backdrop-blur-sm">
+        <nav className="sticky top-0 z-50 border-b-2 border-accent bg-background/80 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="flex h-16 items-center justify-between">
                     
@@ -67,7 +67,7 @@ export default function NavBar() {
                                 <AnimatePresence>
                                     {activeSection === item.href && (
                                         <motion.div
-                                            className="absolute bottom-0 left-0 right-0 h-px bg-foreground"
+                                            className="absolute bottom-0 left-0 right-0 h-px bg-accent"
                                             layoutId="activeNav"
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export default function NavBar() {
 
                     <div className="flex items-center gap-4">
                         <motion.div 
-                            className="text-xs tracking-[0.2em] uppercase text-foreground/40"
+                            className="text-xs tracking-[0.2em] uppercase text-accent"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
