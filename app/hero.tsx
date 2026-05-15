@@ -26,7 +26,7 @@ export default function Hero() {
     }, [mode]);
 
     return (
-        <section id="hero" className="min-h-screen relative overflow-hidden">
+        <section id="hero" className="scroll-mt-20 min-h-screen relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
                 
                 <div className="lg:col-span-7 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 lg:py-0">

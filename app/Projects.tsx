@@ -58,7 +58,7 @@ export default function Projects() {
     const categories: (ProjectCategory | 'All')[] = ['All', 'API Development', 'Database Architecture', 'Microservices', 'System Optimization'];
 
     return (
-        <section id="projects" className="py-24 lg:py-32 bg-foreground/[0.02] border-t-2 border-accent">
+        <section id="projects" className="scroll-mt-20 py-24 lg:py-32 bg-foreground/[0.02] border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-8">

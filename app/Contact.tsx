@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-24 lg:py-32 bg-foreground/[0.02] border-t-2 border-accent">
+        <section id="contact" className="scroll-mt-20 py-24 lg:py-32 bg-foreground/[0.02] border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
@@ -25,7 +25,7 @@ export default function Contact() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            Let's work together
+                            Let&apos;s work together
                         </motion.h2>
                         <motion.p 
                             className="text-base text-foreground/60 leading-relaxed max-w-md"
@@ -34,7 +34,7 @@ export default function Contact() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can bring your ideas to life.
+                            Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s discuss how we can bring your ideas to life.
                         </motion.p>
                     </div>
 

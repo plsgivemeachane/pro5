@@ -21,7 +21,7 @@ export default function TechnicalExertise() {
     ];
 
     return (
-        <section id="technical-expertise" className="py-24 lg:py-32 border-t-2 border-accent">
+        <section id="technical-expertise" className="scroll-mt-20 py-24 lg:py-32 border-t-2 border-accent">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 
                 <div className="mb-20 lg:mb-24">

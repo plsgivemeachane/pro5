@@ -20,7 +20,7 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-3xl lg:text-4xl font-medium tracking-tight mb-4">
-                                Let's build something great together.
+                                Let&apos;s build something great together.
                             </h2>
                             <p className="text-sm text-foreground/60 mb-8 max-w-md">
                                 Available for freelance projects and full-time opportunities. Based in Binh Phuoc, Viet Nam.
